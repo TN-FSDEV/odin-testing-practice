@@ -110,3 +110,16 @@ describe("caesar cipher function", () => {
     })
 })
 
+describe("analyze array function", () => {
+    test("it should return an object with properties such as average, min, max, and length", () => {
+        const analyzeTestCases = [
+            { input: [1, 8, 3, 4, 2, 6], expected: { average: 4, min: 1, max: 8, length: 6 } },
+            { input: [1, 8, 3, 4, 9, 15, -4, -12], expected: { average: 3, min: -12, max: 15, length: 8 } },
+            { input: [1, 8, 3, 4], expected: { average: 4, min: 1, max: 8, length: 4 } }
+        ];
+        analyzeTestCases.forEach((testCase) => {
+            const object = analyzeArray(testCase.input);
+            expect(object).toEqual(testCase.expected);
+        })
+    })
+})

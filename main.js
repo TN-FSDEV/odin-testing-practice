@@ -38,7 +38,14 @@ function caesarCipher(string, factor) {
     return shiftedStr.join("");
 };
 
-function analyzeArray() { };
+function analyzeArray(array) {
+    return {
+        average: array.reduce((total, current) => total + current) / array.length,
+        min: array.reduce((current, next) => current < next ? current : next),
+        max: array.reduce((current, next) => current > next ? current : next),
+        length: array.length
+    }
+};
 
 
 //helper functions
