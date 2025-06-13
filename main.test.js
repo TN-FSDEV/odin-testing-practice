@@ -79,3 +79,30 @@ describe("calculator's functions should perform mathematically", () => {
         })
     })
 })
+
+describe("caesar cipher", () => {
+    test("it should return a string shifted according to a positive shift factor", () => {
+        expect(caesarCipher("xyz", 3)).toBe("abc");
+    })
+
+    test("it should also preserve text case", () => {
+        expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
+    })
+
+    test("it should not change non-alphabetic characters", () => {
+        expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+    })
+
+    test("it should still return a shifted string even if the shift factor is negative", () => {
+        expect(caesarCipher("abc", -3)).toBe("xyz");
+    })
+
+    test("it should still return a shifted string even if shift factor > 26 (shift left more than alphabet range", () => {
+        expect(caesarCipher("abc", 100)).toBe("wxy");
+    })
+
+    test("it should still return a shifted string even if shift factor < -26 (shift right more than alphabet range", () => {
+        expect(caesarCipher("abc", -30)).toBe("wxy");
+    })
+})
+
