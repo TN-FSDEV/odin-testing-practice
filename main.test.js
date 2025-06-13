@@ -1,28 +1,32 @@
 import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from "./main.js"
 
-test("The first character should be capitalized", () => {
-    const stringTestCases = [
-        { input: "cat", expected: "Cat" },
-        { input: "foreigner", expected: "Foreigner" },
-        { input: "developer", expected: "Developer" }
-    ];
-    stringTestCases.forEach((testCase) => {
-        expect(capitalize(testCase.input)).toBe(testCase.expected);
+describe("capitalize function", () => {
+    test("The first character should be capitalized", () => {
+        const stringTestCases = [
+            { input: "cat", expected: "Cat" },
+            { input: "foreigner", expected: "Foreigner" },
+            { input: "developer", expected: "Developer" }
+        ];
+        stringTestCases.forEach((testCase) => {
+            expect(capitalize(testCase.input)).toBe(testCase.expected);
+        })
     })
 })
 
-test("The string should be reversed", () => {
-    const stringTestCases = [
-        { input: "cat", expected: "tac" },
-        { input: "foreigner", expected: "rengierof" },
-        { input: "ambiguous", expected: "suougibma" }
-    ];
-    stringTestCases.forEach((testCase) => {
-        expect(reverseString(testCase.input)).toBe(testCase.expected);
+describe("reverseString function", () => {
+    test("The string should be reversed", () => {
+        const stringTestCases = [
+            { input: "cat", expected: "tac" },
+            { input: "foreigner", expected: "rengierof" },
+            { input: "ambiguous", expected: "suougibma" }
+        ];
+        stringTestCases.forEach((testCase) => {
+            expect(reverseString(testCase.input)).toBe(testCase.expected);
+        })
     })
 })
 
-describe("calculator's functions should perform mathematically", () => {
+describe("calculator's functions", () => {
     test("the result of add(a, b) should equal a + b", () => {
         let a, b;
         const addNumberTestCases = [
@@ -80,7 +84,7 @@ describe("calculator's functions should perform mathematically", () => {
     })
 })
 
-describe("caesar cipher", () => {
+describe("caesar cipher function", () => {
     test("it should return a string shifted according to a positive shift factor", () => {
         expect(caesarCipher("xyz", 3)).toBe("abc");
     })
